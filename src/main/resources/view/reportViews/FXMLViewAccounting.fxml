@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="viewAccountingAnchorPane" stylesheets="@../themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AccountingController">
+    <BorderPane prefWidth="1000.0" prefHeight="900.0">
+        <center>
+            <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                <Label text="Income" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="incomeText" text="Sample Text" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="1">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label text="Expenses - Salaries" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="expensesSalariesText" text="Sample Text" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="2">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label text="Expenses - Materials" GridPane.rowIndex="3">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="expensesMaterialsText" text="Sample Text" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="3">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label text="Profit" GridPane.rowIndex="4">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="profitText" text="Sample Text" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="4">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label text="Net Profit" GridPane.rowIndex="5">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="netProfitText" text="Sample Text" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="5">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+            </GridPane>
+        </center>
+    </BorderPane>
+</AnchorPane>

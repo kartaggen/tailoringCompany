@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="menuMaterialsAnchorPane" stylesheets="@../themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MaterialController">
+    <VBox maxWidth="1000.0" prefHeight="900.0" styleClass="materialsListVbox">
+        <FlowPane prefWidth="1000.0">
+            <VBox.margin>
+                <Insets left="10.0" right="10.0"/>
+            </VBox.margin>
+            <VBox>
+                <Label styleClass="label-header" text="Materials List"/>
+                <TableView fx:id="materialsListTableView" prefHeight="250.0" prefWidth="980.0">
+                    <columns>
+                        <TableColumn fx:id="materialsListTableViewIdColumn" prefWidth="50.0" text="Id"/>
+                        <TableColumn fx:id="materialsListTableViewNameColumn" editable="false" prefWidth="150.0"
+                                     text="Name"/>
+                        <TableColumn fx:id="materialsListTableViewColorNameColumn" editable="false" prefWidth="150.0"
+                                     text="Color"/>
+                        <TableColumn fx:id="materialsListTableViewPricePerSqmColumn" editable="false" prefWidth="150.0"
+                                     text="Price sq.m."/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </FlowPane>
+        <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="1000.0">
+            <padding>
+                <Insets bottom="10.0" top="10.0"/>
+            </padding>
+            <GridPane hgap="10.0" vgap="10.0">
+                <Button fx:id="deleteMaterialButton" mnemonicParsing="false" onAction="#deleteMaterialAction"
+                        text="Delete Material"/>
+                <Button fx:id="editMaterialButton" mnemonicParsing="false" onAction="#editMaterialAction"
+                        text="Edit Material" GridPane.columnIndex="1"/>
+                <Button fx:id="loadMaterialsButton" mnemonicParsing="false" onAction="#loadMaterials"
+                        text="Load Materials" GridPane.columnIndex="2"/>
+            </GridPane>
+        </FlowPane>
+        <Separator prefWidth="800.0"/>
+        <GridPane alignment="CENTER" hgap="10.0" prefWidth="340.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" maxWidth="150.0" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="250.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="590.0"
+                   styleClass="label-header" text="Insert Material Data" GridPane.columnSpan="2"/>
+
+            <Label styleClass="materialsListLabel" text="Id" GridPane.rowIndex="1"/>
+            <Label styleClass="materialsListLabel" text="Name" GridPane.rowIndex="2"/>
+            <Label styleClass="materialsListLabel" text="Color" GridPane.rowIndex="3"/>
+            <Label styleClass="materialsListLabel" text="Price Sq.m." GridPane.rowIndex="4"/>
+
+            <Label fx:id="materialIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TextField fx:id="materialNameText" accessibleText="Name" maxWidth="250.0" prefWidth="250.0"
+                       promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <TextField fx:id="materialColorText" accessibleText="Color" maxWidth="250.0" prefWidth="250.0"
+                       promptText="Color" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <TextField fx:id="materialPricePerSqmText" accessibleText="Price Sq.m." maxWidth="250.0" prefWidth="250.0"
+                       promptText="Price Sq.m." GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <GridPane alignment="CENTER" maxWidth="350.0" prefWidth="350.0" GridPane.columnSpan="2"
+                      GridPane.rowIndex="5">
+                <Button fx:id="clearMaterialForm" mnemonicParsing="false" onAction="#clearMaterialForm"
+                        text="Clear Form" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="10.0"/>
+                    </GridPane.margin>
+                </Button>
+                <Button fx:id="insertMaterialButton" alignment="CENTER" mnemonicParsing="false"
+                        onAction="#saveMaterialAction" text="Save Material" GridPane.columnIndex="2"
+                        GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="10.0"/>
+                    </GridPane.margin>
+                </Button>
+            </GridPane>
+            <Label fx:id="materialErrorMessage" alignment="TOP_CENTER" prefHeight="150.0" prefWidth="590.0" textFill="RED"
+                   GridPane.columnSpan="2" GridPane.rowIndex="6"/>
+        </GridPane>
+    </VBox>
+</AnchorPane>

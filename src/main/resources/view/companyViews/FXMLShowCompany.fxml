@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="companyShowAnchorPane" stylesheets="@../themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.CompanyController">
+    <BorderPane fx:id="rootBorderPane" prefHeight="900.0" prefWidth="1000.0">
+        <center>
+            <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                <Label styleClass="companyNameLabel" text="Company Name" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="companyNameText" text="Sample Name" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="1">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label styleClass="companyIncomeTaxLabel" text="Income Tax" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="incomeTaxText" text="Sample Tax" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="2">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label styleClass="salaryExpLabel" text="Salary Experienced" GridPane.rowIndex="3">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="salaryExpText" text="Sample Salary" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="3">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <Label styleClass="salaryInexpLabel" text="Salary Inexperienced" GridPane.rowIndex="4">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="salaryInexpText" text="Sample Salary" textFill="#0cc3c9" GridPane.columnIndex="1"
+                       GridPane.rowIndex="4">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+            </GridPane>
+        </center>
+    </BorderPane>
+</AnchorPane>

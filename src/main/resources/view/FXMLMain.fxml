@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainAnchorPane" stylesheets="@themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MainController">
+    <BorderPane fx:id="rootBorderPane" prefHeight="900.0" prefWidth="1000.0">
+        <top>
+            <MenuBar nodeOrientation="LEFT_TO_RIGHT">
+                <menus>
+                    <Menu mnemonicParsing="false" text="Company">
+                        <items>
+                            <MenuItem fx:id="show_company"
+                                      mnemonicParsing="false"
+                                      onAction="#loadShowCompanyAnchor"
+                                      text="Show details"/>
+                            <MenuItem fx:id="edit_company"
+                                      mnemonicParsing="false"
+                                      onAction="#loadEditCompanyAnchor"
+                                      text="Edit Details"/>
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Revision">
+                        <items>
+                            <MenuItem fx:id="employees_menu"
+                                      mnemonicParsing="false"
+                                      onAction="#loadMenuEmployeesAnchor"
+                                      text="Employees"/>
+                            <MenuItem fx:id="work_orders_menu"
+                                      mnemonicParsing="false"
+                                      onAction="#loadMenuWorkOrdersAnchor"
+                                      text="Work Orders"/>
+                            <MenuItem fx:id="parts_menu"
+                                      mnemonicParsing="false"
+                                      onAction="#loadMenuPartsAnchor"
+                                      text="Parts"/>
+                            <MenuItem fx:id="materials_menu"
+                                      mnemonicParsing="false"
+                                      onAction="#loadMenuMaterialsAnchor"
+                                      text="Materials"/>
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Reports">
+                        <items>
+                            <MenuItem fx:id="view_accounting"
+                                      mnemonicParsing="false"
+                                      onAction="#loadViewAccountingAnchor"
+                                      text="View Accounting"/>
+                            <MenuItem fx:id="view_all_parts"
+                                      mnemonicParsing="false"
+                                      onAction="#loadViewAllPartsAnchor"
+                                      text="View Parts' Quantities"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+        </top>
+    </BorderPane>
+</AnchorPane>

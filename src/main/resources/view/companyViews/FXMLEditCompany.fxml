@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="companyEditAnchorPane" stylesheets="@../themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.CompanyController">
+    <BorderPane fx:id="rootBorderPane" prefHeight="900.0" prefWidth="1000.0">
+        <center>
+            <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                <Label text="Company Name" GridPane.rowIndex="1">
+                    <padding>
+                        <Insets bottom="15.0" top="15.0"/>
+                    </padding>
+                </Label>
+                <TextField fx:id="companyName" accessibleText="Sample Name" maxWidth="250.0" minWidth="250.0"
+                           prefWidth="250.0" promptText="Company Initial Capital" GridPane.columnIndex="1"
+                           GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+                <Label text="Income Tax" GridPane.rowIndex="2">
+                    <padding>
+                        <Insets bottom="15.0" top="15.0"/>
+                    </padding>
+                </Label>
+                <TextField fx:id="companyIncomeTax" accessibleText="20.00" maxWidth="1000" promptText="20.00"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Salary Experienced" GridPane.rowIndex="3">
+                    <padding>
+                        <Insets bottom="15.0" top="15.0"/>
+                    </padding>
+                </Label>
+                <TextField fx:id="salaryExperienced" accessibleText="1200.00" maxWidth="1000"
+                           promptText="Salary Experienced" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label text="Salary Inexperienced" GridPane.rowIndex="4">
+                    <padding>
+                        <Insets bottom="15.0" top="15.0"/>
+                    </padding>
+                </Label>
+                <TextField fx:id="salaryInexperienced" accessibleText="1600.00" maxWidth="1000"
+                           promptText="Salary Inexperienced" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <GridPane alignment="CENTER" maxWidth="350.0" prefWidth="350.0" GridPane.columnSpan="2"
+                          GridPane.rowIndex="5">
+                    <Button mnemonicParsing="false" onAction="#cancelEditDetails" text="Cancel Edits"
+                            GridPane.columnIndex="0">
+                        <GridPane.margin>
+                            <Insets right="10.0"/>
+                        </GridPane.margin>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#applyEditDetails" text="Apply Edits"
+                            GridPane.columnIndex="1">
+                        <GridPane.margin>
+                            <Insets left="10.0"/>
+                        </GridPane.margin>
+                    </Button>
+                </GridPane>
+                <Label fx:id="errorMessage" prefHeight="100.0" prefWidth="340.0" textFill="RED" GridPane.columnSpan="2"
+                       GridPane.rowIndex="6"/>
+            </GridPane>
+        </center>
+    </BorderPane>
+</AnchorPane>

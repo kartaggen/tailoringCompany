@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="menuWorkOrdersAnchorPane" stylesheets="@../themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.WorkOrderController">
+    <VBox maxWidth="1000.0" prefHeight="900.0" styleClass="workOrdersListVbox">
+        <FlowPane prefWidth="1000.0">
+            <VBox.margin>
+                <Insets left="10.0" right="10.0"/>
+            </VBox.margin>
+            <VBox>
+                <Label styleClass="label-header" text="WorkOrders List"/>
+                <TableView fx:id="workOrdersListTableView" prefHeight="250.0" prefWidth="980.0">
+                    <columns>
+                        <TableColumn fx:id="workOrdersListTableViewIdColumn" prefWidth="50.0" text="Id"/>
+                        <TableColumn fx:id="workOrdersListTableViewEmployeeColumn" editable="false" prefWidth="250.0"
+                                     text="Employee"/>
+                        <TableColumn fx:id="workOrdersListTableViewPartColumn" editable="false" prefWidth="400.0"
+                                     text="Part"/>
+                        <TableColumn fx:id="workOrdersListTableViewQuantityColumn" editable="false" prefWidth="100.0"
+                                     text="Quantity"/>
+                        <TableColumn fx:id="workOrdersListTableViewCompletionColumn" prefWidth="140.0"
+                                     text="Completion"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </FlowPane>
+        <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="1000.0">
+            <padding>
+                <Insets bottom="10.0" top="10.0"/>
+            </padding>
+            <GridPane hgap="10.0" vgap="10.0">
+                <Button fx:id="deleteWorkOrderButton" mnemonicParsing="false" onAction="#deleteWorkOrderAction"
+                        text="Delete Work Order"/>
+                <Button fx:id="editWorkOrderButton" mnemonicParsing="false" onAction="#editWorkOrderAction"
+                        text="Edit Work Order" GridPane.columnIndex="1"/>
+                <Button fx:id="loadWorkOrdersButton" mnemonicParsing="false" onAction="#loadWorkOrders"
+                        text="Load Work Orders" GridPane.columnIndex="2"/>
+            </GridPane>
+        </FlowPane>
+        <Separator prefWidth="1000.0"/>
+        <GridPane alignment="CENTER" hgap="10.0" prefWidth="340.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" maxWidth="150.0" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="250.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="590.0"
+                   styleClass="label-header" text="Insert Work Order Data" GridPane.columnSpan="2"/>
+
+            <Label styleClass="workOrdersListLabel" text="Id" GridPane.rowIndex="1"/>
+            <Label styleClass="workOrdersListLabel" text="Employee" GridPane.rowIndex="2"/>
+            <Label styleClass="workOrdersListLabel" text="Part" GridPane.rowIndex="3"/>
+            <Label styleClass="workOrdersListLabel" text="Quantity" GridPane.rowIndex="4"/>
+            <Label styleClass="workOrdersListLabel" text="Completion Date" GridPane.rowIndex="5"/>
+
+            <Label fx:id="workOrderIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="workOrderEmployeeComboBox" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1"
+                      GridPane.rowIndex="2"/>
+            <ComboBox fx:id="workOrderPartComboBox" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1"
+                      GridPane.rowIndex="3"/>
+            <TextField fx:id="workOrderQuantityText" accessibleText="Quantity" maxWidth="250.0" prefWidth="250.0"
+                       promptText="Quantity" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <DatePicker fx:id="workOrderCompletionDatePicker"
+                        accessibleText="Work Order Completion"
+                        maxWidth="250.0"
+                        minWidth="250.0" GridPane.columnIndex="1"
+                        GridPane.rowIndex="5"/>
+            <GridPane alignment="CENTER" maxWidth="350.0" prefWidth="350.0" GridPane.columnSpan="2"
+                      GridPane.rowIndex="6">
+                <Button fx:id="clearWorkOrderForm" mnemonicParsing="false" onAction="#clearWorkOrderForm"
+                        text="Clear Form" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="10.0"/>
+                    </GridPane.margin>
+                </Button>
+                <Button fx:id="insertWorkOrderButton" alignment="CENTER" mnemonicParsing="false"
+                        onAction="#saveWorkOrderAction" text="Save Work Order" GridPane.columnIndex="2"
+                        GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="10.0"/>
+                    </GridPane.margin>
+                </Button>
+            </GridPane>
+            <Label fx:id="workOrderErrorMessage" alignment="TOP_CENTER" prefHeight="150.0" prefWidth="590.0"
+                   textFill="RED" GridPane.columnSpan="2" GridPane.rowIndex="7"/>
+        </GridPane>
+    </VBox>
+</AnchorPane>

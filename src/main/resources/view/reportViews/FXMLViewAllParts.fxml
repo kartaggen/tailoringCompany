@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="viewAllPartsAnchorPane" stylesheets="@../themes/BlueTheme.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ViewPartsController">
+    <VBox maxWidth="1000.0" prefHeight="900.0">
+
+        <FlowPane prefWidth="1000.0">
+            <VBox.margin>
+                <Insets left="10.0" right="10.0"/>
+            </VBox.margin>
+            <VBox>
+                <GridPane vgap="10.0">
+                    <Label styleClass="label-header" text="Manufactured Parts by" GridPane.columnIndex="1">
+                        <GridPane.margin>
+                            <Insets bottom="10.0" top="10.0"/>
+                        </GridPane.margin>
+                    </Label>
+                    <ComboBox fx:id="viewAllPartsByEmployee" prefHeight="25.0" prefWidth="250.0"
+                              GridPane.columnIndex="2">
+                        <GridPane.margin>
+                            <Insets left="10.0"/>
+                        </GridPane.margin>
+                    </ComboBox>
+                    <Button fx:id="loadAllPartsBy" alignment="CENTER" mnemonicParsing="false"
+                            onAction="#loadAllPartsByEmployee" text="Load" GridPane.columnIndex="3">
+                        <GridPane.margin>
+                            <Insets left="10.0"/>
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="loadAllParts" alignment="CENTER" mnemonicParsing="false"
+                            onAction="#loadAllParts" text="Load By Everyone" GridPane.columnIndex="4">
+                        <GridPane.margin>
+                            <Insets left="10.0"/>
+                        </GridPane.margin>
+                    </Button>
+                    <Label fx:id="loadError" GridPane.columnIndex="5" textFill="RED">
+                        <GridPane.margin>
+                            <Insets left="10.0"/>
+                        </GridPane.margin>
+                    </Label>
+                </GridPane>
+                <TableView fx:id="allPartsByListTableView" prefHeight="800.0" prefWidth="980.0">
+                    <columns>
+                        <TableColumn fx:id="allPartsByListTableViewPartId" editable="false" prefWidth="100.0"
+                                     text="Part Id"/>
+                        <TableColumn fx:id="allPartsByListTableViewPartName" editable="false" prefWidth="300.0"
+                                     text="Part Name"/>
+                        <TableColumn fx:id="allPartsByListTableViewQuantity" editable="false" prefWidth="100.0"
+                                     text="Quantity"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </FlowPane>
+    </VBox>
+</AnchorPane>

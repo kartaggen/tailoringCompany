@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="menuPartsAnchorPane" stylesheets="@../themes/BlueTheme.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PartController">
+    <VBox maxWidth="1000.0" prefHeight="900.0" styleClass="partsListVbox">
+        <FlowPane prefWidth="1000.0">
+            <VBox.margin>
+                <Insets left="10.0" right="10.0" />
+            </VBox.margin>
+            <VBox>
+                <Label styleClass="label-header" text="Parts List" />
+                <TableView fx:id="partsListTableView" prefHeight="250.0" prefWidth="980.0">
+                    <columns>
+                        <TableColumn fx:id="partsListTableViewIdColumn" prefWidth="60.0" text="Id" />
+                        <TableColumn fx:id="partsListTableViewNameColumn" editable="false" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="partsListTableViewMaterialColumn" editable="false" prefWidth="200.0" text="Material" />
+                        <TableColumn fx:id="partsListTableViewNeededSqmColumn" editable="false" prefWidth="160.0" text="Needed sq.m." />
+                        <TableColumn fx:id="partsListTableViewExpMakePerMonthColumn" editable="false" prefWidth="120.0" text="Exp/month" />
+                        <TableColumn fx:id="partsListTableViewInexpMakePerMonthColumn" editable="false" prefWidth="125.0" text="Inexp/month" />
+                        <TableColumn fx:id="partsListTableViewSellPriceColumn" editable="false" prefWidth="120.0" text="Sell Price" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </FlowPane>
+        <FlowPane alignment="CENTER" prefHeight="45.0" prefWidth="800.0">
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+            <GridPane hgap="10.0" vgap="10.0">
+                <Button fx:id="deletePartButton" mnemonicParsing="false" onAction="#deletePartAction" text="Delete Part" />
+                <Button fx:id="editPartButton" mnemonicParsing="false" onAction="#editPartAction" text="Edit Part" GridPane.columnIndex="1" />
+                <Button fx:id="loadPartsButton" mnemonicParsing="false" onAction="#loadParts" text="Load Parts" GridPane.columnIndex="2" />
+            </GridPane>
+        </FlowPane>
+        <Separator prefWidth="800.0" />
+        <GridPane alignment="CENTER" hgap="10.0" prefWidth="340.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" maxWidth="150.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="250.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="590.0" styleClass="label-header" text="Insert Part Data" GridPane.columnSpan="2" />
+
+            <Label styleClass="partsListLabel" text="Id" GridPane.rowIndex="1" />
+            <Label styleClass="partsListLabel" text="Name" GridPane.rowIndex="2" />
+            <Label styleClass="partsListLabel" text="Material" GridPane.rowIndex="3" />
+            <Label styleClass="partsListLabel" text="Needed sq.m." GridPane.rowIndex="4" />
+            <Label styleClass="partsListLabel" text="Experienced/month" GridPane.rowIndex="5" />
+            <Label styleClass="partsListLabel" text="Inexperienced/month" GridPane.rowIndex="6" />
+            <Label styleClass="partsListLabel" text="Sell Price" GridPane.rowIndex="7" />
+
+            <Label fx:id="partIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="partNameText" accessibleText="Name" maxWidth="250.0" prefWidth="250.0" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="partMaterialComboBox" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="partNeededSqmText" accessibleText="Needed sq.m." maxWidth="250.0" prefWidth="250.0" promptText="Needed sq.m." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="partExpPerMonthText" accessibleText="Experienced/month" maxWidth="250.0" prefWidth="250.0" promptText="Experienced/month" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="partInexpPerMonthText" accessibleText="Inexperienced/month" maxWidth="250.0" prefWidth="250.0" promptText="Inexperienced/month" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="partSellPriceText" accessibleText="Sell Price" maxWidth="250.0" prefWidth="250.0" promptText="Sell Price" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <GridPane alignment="CENTER" maxWidth="350.0" prefWidth="350.0" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                <Button fx:id="clearPartForm" mnemonicParsing="false" onAction="#clearPartForm" text="Clear Form" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="10.0" />
+                    </GridPane.margin>
+                </Button>
+                <Button fx:id="insertPartButton" alignment="CENTER" mnemonicParsing="false" onAction="#savePartAction" text="Save Part" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="10.0" />
+                    </GridPane.margin>
+                </Button>
+            </GridPane>
+            <Label fx:id="partErrorMessage" alignment="TOP_CENTER" prefHeight="150.0" prefWidth="590.0" textFill="RED" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+        </GridPane>
+    </VBox>
+</AnchorPane>
